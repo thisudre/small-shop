@@ -9,7 +9,7 @@ class Cliente
     private $celular;
     static public $quantidadeClientes;
 
-    public function __construct(string $nome, string $email, string $celular)
+    public function __construct(string $nome, Email $email, string $celular)
     {
         $this->nome = $nome;
         $this->email = $email;
@@ -20,6 +20,12 @@ class Cliente
     public function __destruct()
     {
         Cliente::$quantidadeClientes--;
+    }
+
+    public function __tostring()
+    {
+        $string = "Nome: {$this->nome}" . PHP_EOL    . "Email: {$this->email->getEmail()}" . PHP_EOL . "Celular: {$this->celular}";
+        return $string;
     }
 
     public function getNome()
