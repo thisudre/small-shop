@@ -14,13 +14,16 @@ class Pedido
         'enviado',
         'concluido'
     ];
+    public static $qtdPedidos = 0;
 
     public function __construct(string $numero, Produto $produto, Cliente $cliente)
     {
-        $this->numero = $numero;
+        $this->numero = Pedido::$qtdPedidos;
         $this->produtos = $produto;
         $this->cliente = $cliente;
         $this->estado = 0;
+
+        Pedido::$qtdPedidos++;
     }
 
     public function getNumero()
