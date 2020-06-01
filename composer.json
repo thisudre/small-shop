@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-4": {
+            "SmallShop\\": "src/"
+        }
+    },
+    "require": {
+        "ext-pdo": "*"
+    }
+}

@@ -1,5 +1,5 @@
 <?php
-namespace SmallShop\Models;
+namespace SmallShop\Domain\Models;
 
 class Email  
 {
