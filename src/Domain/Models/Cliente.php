@@ -10,11 +10,11 @@ class Cliente
     private $celular;
     static public $quantidadeClientes;
 
-    public function __construct(?int $idCliente, string $nome, Email $email, string $celular)
+    public function __construct(?int $idCliente, string $nome, string $email, string $celular)
     {
         $this->idCliente = $idCliente;
         $this->nome = $nome;
-        $this->email = $email;
+        $this->email = new Email($email);
         $this->celular = $celular;
         Cliente::$quantidadeClientes++;
     }
@@ -27,9 +27,9 @@ class Cliente
     {
         return $this->nome;
     }
-    public function getEmail(): Email
+    public function getEmail(): string
     {
-        return $this->email;
+        return $this->email->getEmail();
     }
     public function getCelular(): string
     {

@@ -6,8 +6,10 @@ use PDO;
 
 class DatabaseConnection  
 {
-    public static function connectDatabase()
+    public static function connectDatabase(): PDO
     {
-        return new PDO("sqlite:", __DIR__ . "../../database.sqlite");
+        $pdo = new PDO("sqlite:" . __DIR__ . "/../../database.sqlite");
+        var_dump($pdo);
+        return $pdo;
     }
 }
